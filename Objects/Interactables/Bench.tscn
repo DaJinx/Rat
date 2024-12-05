@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://bs2xkqfoqb8et"]
+
+[ext_resource type="Script" path="res://Objects/Interactables/Bench.gd" id="1_ancuf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nyx5q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ocg5c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1gaa"]
+size = Vector3(3.57758, 0.635895, 1.18713)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x63ag"]
+size = Vector3(3.57758, 0.974262, 0.15065)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8ani"]
+size = Vector3(1.09477, 0.177361, 0.576214)
+
+[sub_resource type="PrismMesh" id="PrismMesh_q2upd"]
+
+[node name="Bench" type="Node3D"]
+script = ExtResource("1_ancuf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.59311, 0, 0, 0, 0.188005, 0, 0, 0, 1.21612, 0, 0.582524, 0)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174513, 0, 0, 0, 0.160318, -0.651699, 0, 0.0773144, 1.35135, -1.63999, 1.0814, 0)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174513, 0, 0, 0, -7.78006e-09, -0.625152, 0, 0.177987, -2.73263e-08, -1.63999, 0.264513, 0.49307)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174513, 0, 0, 0, -7.78006e-09, -0.625152, 0, 0.177987, -2.73263e-08, 1.60043, 0.264513, 0.49307)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174513, 0, 0, 0, -7.78006e-09, -0.625152, 0, 0.177987, -2.73263e-08, -1.63999, 0.264513, -0.473496)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174513, 0, 0, 0, -7.78006e-09, -0.625152, 0, 0.177987, -2.73263e-08, 1.60043, 0.264513, -0.473496)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174513, 0, 0, 0, 0.160318, -0.651699, 0, 0.0773144, 1.35135, 1.63559, 1.0814, 0)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.48719, 0, 0, 0, 0.0185874, -0.963858, 0, 0.131573, 0.136165, 0, 1.15685, -0.590931)
+mesh = SubResource("BoxMesh_nyx5q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_ocg5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00863647, 0.350521, -0.0113895)
+shape = SubResource("BoxShape3D_f1gaa")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_ocg5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00863647, 1.17242, -0.630292)
+shape = SubResource("BoxShape3D_x63ag")
+
+[node name="SitArea_1" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SitArea_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802717, 0.968001, -0.0876775)
+shape = SubResource("BoxShape3D_s8ani")
+
+[node name="SitArea_2" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SitArea_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794407, 0.969655, -0.0913971)
+shape = SubResource("BoxShape3D_s8ani")
+
+[node name="SitLocRot_1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.795108, 0.665373, 0.0878852)
+
+[node name="DisplayMesh" type="MeshInstance3D" parent="SitLocRot_1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.0668862, 0)
+visible = false
+mesh = SubResource("PrismMesh_q2upd")
+
+[node name="SitLocRot_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.795, 0.665, 0.088)
+
+[node name="DisplayMesh" type="MeshInstance3D" parent="SitLocRot_2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.0668862, 0)
+visible = false
+mesh = SubResource("PrismMesh_q2upd")
+
+[connection signal="body_entered" from="SitArea_1" to="." method="_on_sit_1_entered"]
+[connection signal="body_exited" from="SitArea_1" to="." method="_on_sit_1_exited"]
+[connection signal="body_entered" from="SitArea_2" to="." method="_on_sit_2_entered"]
+[connection signal="body_exited" from="SitArea_2" to="." method="_on_sit_2_exited"]

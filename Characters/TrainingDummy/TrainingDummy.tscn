@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://yfrlh04vuq8k"]
+
+[ext_resource type="Script" path="res://Characters/TrainingDummy/training_dummy.gd" id="1_dgmhb"]
+[ext_resource type="PackedScene" uid="uid://cygv6ksxo7ux2" path="res://CameraControllers/LockOnComponent.tscn" id="2_y6mjf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rabx2"]
+height = 3.01696
+radius = 0.554174
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vewxb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4xb7"]
+albedo_color = Color(0.231373, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_oicgf"]
+material = SubResource("StandardMaterial3D_h4xb7")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kvyvw"]
+height = 2.06416
+radius = 0.554174
+
+[node name="TrainingDummy" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_dgmhb")
+
+[node name="Hurtbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.99402, 0)
+shape = SubResource("CylinderShape3D_rabx2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 2.92485, 0)
+mesh = SubResource("CylinderMesh_vewxb")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.333333, 0, 0, 0, 0.5, 0, 0.55, -0.472455)
+mesh = SubResource("SphereMesh_oicgf")
+skeleton = NodePath("../../..")
+
+[node name="WeaponRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1829, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WeaponRoot"]
+transform = Transform3D(0.8, 0, 0, 0, -8.74228e-08, -0.8, 0, 2, -3.49691e-08, 0, -0.0758979, 4.38918)
+mesh = SubResource("CylinderMesh_vewxb")
+skeleton = NodePath("../../..")
+
+[node name="Area3D" type="Area3D" parent="WeaponRoot/MeshInstance3D2"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WeaponRoot/MeshInstance3D2/Area3D"]
+shape = SubResource("CylinderShape3D_kvyvw")
+
+[node name="LockOnComponent" parent="." instance=ExtResource("2_y6mjf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674568, 0)
+flyOffset = 6.0

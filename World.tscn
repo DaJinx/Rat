@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://cocecrnogsrky"]
+
+[ext_resource type="PackedScene" uid="uid://cpfo00q3j184l" path="res://Portals/Portal.tscn" id="4_e3ihv"]
+[ext_resource type="PackedScene" uid="uid://cf0w0skqs3k64" path="res://Player/player.tscn" id="5_sw684"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d3qqd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_lg4ok"]
+sky_material = SubResource("ProceduralSkyMaterial_d3qqd")
+
+[sub_resource type="Environment" id="Environment_hi5kn"]
+background_mode = 2
+sky = SubResource("Sky_lg4ok")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i83ly"]
+albedo_color = Color(0, 0.729412, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trgb1"]
+albedo_color = Color(1, 0, 0.176471, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qlch6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj73d"]
+albedo_color = Color(1, 0.917647, 0.415686, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7hbmn"]
+material = SubResource("StandardMaterial3D_aj73d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwpro"]
+albedo_color = Color(0.0117647, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mh4vm"]
+material = SubResource("StandardMaterial3D_kwpro")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0l88h"]
+albedo_color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ysbk4"]
+material = SubResource("StandardMaterial3D_0l88h")
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hi5kn")
+
+[node name="Portal1" type="Node3D" parent="."]
+transform = Transform3D(0.470449, 0, -0.169344, 0, 0.5, 0, 0.169344, 0, 0.470449, 0, -5, -27)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Portal1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+use_collision = true
+size = Vector3(8, 3, 8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Portal1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+material_overlay = SubResource("StandardMaterial3D_i83ly")
+use_collision = true
+size = Vector3(6, 8, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Portal1/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0.25)
+operation = 2
+use_collision = true
+size = Vector3(5, 7.5, 3.5)
+
+[node name="Portal" parent="Portal1" node_paths=PackedStringArray("other_portal") instance=ExtResource("4_e3ihv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+other_portal = NodePath("../../Portal2/Portal")
+cull_layer = 3
+size = Vector2(5, 7.5)
+
+[node name="Portal2" type="Node3D" parent="."]
+transform = Transform3D(0.425351, 0, 0.262825, 0, 0.5, 0, -0.262825, 0, 0.425351, 13, -4.4, -27)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Portal2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+use_collision = true
+size = Vector3(8, 3, 8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Portal2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+material_overlay = SubResource("StandardMaterial3D_trgb1")
+use_collision = true
+size = Vector3(6, 8, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Portal2/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0.25)
+operation = 2
+use_collision = true
+size = Vector3(5, 7.5, 3.5)
+
+[node name="Portal" parent="Portal2" node_paths=PackedStringArray("other_portal") instance=ExtResource("4_e3ihv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+other_portal = NodePath("../../Portal1/Portal")
+size = Vector2(5, 7.5)
+
+[node name="Player2" parent="." instance=ExtResource("5_sw684")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84836, -5.91482, -18.6965)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.72286, 0, 0, 0, 8.16596, 0, 0, 0, 0.446408, -2.32973, -3.33658, -22.8387)
+mesh = SubResource("BoxMesh_qlch6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.72286, 0, 0, 0, 8.16596, 0, 0, 0, 0.446408, 8.30048, -3.33658, 6.94077)
+mesh = SubResource("BoxMesh_7hbmn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.72286, 0, 0, 0, 8.16596, 0, 0, 0, 0.446408, -2.32973, -3.33658, -22.3492)
+mesh = SubResource("BoxMesh_mh4vm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 200, 0, -6.49604, 0)
+mesh = SubResource("BoxMesh_ysbk4")

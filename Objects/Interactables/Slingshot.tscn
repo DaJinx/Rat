@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0jsgcujt371i"]
+
+[ext_resource type="Script" path="res://Objects/Interactables/slingshot.gd" id="1_5052j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q70rm"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ldtdt"]
+height = 0.907956
+radius = 0.868624
+
+[node name="Slingshot" type="Node3D"]
+script = ExtResource("1_5052j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.188457, 0, 0, 0, 1, 0, 0, 0, 0.188564, -0.993479, 0.961376, -0.000247717)
+mesh = SubResource("BoxMesh_q70rm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.188457, 0, 0, 0, 1, 0, 0, 0, 0.188564, 0.95505, 0.979787, 0)
+mesh = SubResource("BoxMesh_q70rm")
+
+[node name="LocRot" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629861, 0.347872)
+shape = SubResource("CylinderShape3D_ldtdt")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

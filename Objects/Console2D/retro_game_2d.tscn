@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://p4tleaniy638"]
+
+[ext_resource type="PackedScene" uid="uid://dhn4uvk0yntrd" path="res://Objects/Console2D/Levels/test_level.tscn" id="1_72vfg"]
+[ext_resource type="Script" path="res://Objects/Console2D/retro_game_2D.gd" id="1_tgplu"]
+[ext_resource type="PackedScene" uid="uid://cq6gfptqg8o60" path="res://Objects/Console2D/Levels/test_level_2.tscn" id="2_aqb3h"]
+
+[node name="RetroGame2D" type="Node2D"]
+script = ExtResource("1_tgplu")
+
+[node name="Game_1" type="Node2D" parent="."]
+
+[node name="TestLevel" parent="Game_1" instance=ExtResource("1_72vfg")]
+visible = false
+
+[node name="TestLevel2" parent="Game_1" instance=ExtResource("2_aqb3h")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSelect" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IntroAnimation" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/IntroAnimation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

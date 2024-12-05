@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwee2gkxw4t2r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pldfg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vfqip"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="RopeEndPiece" type="RigidBody3D"]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_pldfg")
+
+[node name="Joint" type="PinJoint3D" parent="Collision"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vfqip")

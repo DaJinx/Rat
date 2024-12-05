@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlvoskvpuhgoy"]
+
+[ext_resource type="Script" path="res://Objects/Console2D/console_2d.gd" id="1_8126d"]
+[ext_resource type="PackedScene" uid="uid://dniufwkbft27t" path="res://Objects/Console2D/Assets_Console/Gameboy.glb" id="3_chco3"]
+[ext_resource type="PackedScene" uid="uid://p4tleaniy638" path="res://Objects/Console2D/retro_game_2d.tscn" id="3_fk13n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5xqb"]
+size = Vector3(1.7385, 2.47546, 0.3302)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d8ogt"]
+viewport_path = NodePath("Screen/SubViewport")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0pn3q"]
+size = Vector3(2.68, 0.1, 1.11)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nhgfg"]
+size = Vector3(4, 0.1, 1.11)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wtnnp"]
+size = Vector3(4, 0.1, 2.645)
+
+[node name="Console2d" type="Node3D"]
+script = ExtResource("1_8126d")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.154, 3)
+fov = 35.0
+size = 3.857
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0148554, 1.2538, 0.224324)
+shape = SubResource("BoxShape3D_b5xqb")
+
+[node name="Screen" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 1, 0, 3.16699, 0.546226)
+visible = false
+transparent = false
+double_sided = false
+texture = SubResource("ViewportTexture_d8ogt")
+
+[node name="SubViewport" type="SubViewport" parent="Screen"]
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+size = Vector2i(600, 600)
+
+[node name="RetroGame2D" parent="Screen/SubViewport" instance=ExtResource("3_fk13n")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0539652, 0)
+visible = false
+mesh = SubResource("BoxMesh_0pn3q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.58386, 0)
+visible = false
+mesh = SubResource("BoxMesh_0pn3q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.29703, 1.77875, 0)
+visible = false
+mesh = SubResource("BoxMesh_nhgfg")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.30834, 1.7109, -0.00117731)
+visible = false
+mesh = SubResource("BoxMesh_nhgfg")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0180105, 1.67236, -0.538494)
+visible = false
+mesh = SubResource("BoxMesh_wtnnp")
+
+[node name="Gameboy" parent="." instance=ExtResource("3_chco3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0.528207)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

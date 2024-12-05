@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxmkug6vwnot4"]
+
+[ext_resource type="Script" path="res://Objects/Controllers/Shared/button.gd" id="1_nhf7k"]
+[ext_resource type="PackedScene" uid="uid://c2jerg4uq0vye" path="res://Objects/Controllers/Models/Keyboard/KeyboardController_FatKey.fbx" id="4_ui3l4"]
+
+[node name="KeyboardKey" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12882, 0, 1.35932)
+script = ExtResource("1_nhf7k")
+input = null
+type = null
+
+[node name="KeyRoot" type="Node3D" parent="."]
+
+[node name="FatKey" parent="KeyRoot" instance=ExtResource("4_ui3l4")]

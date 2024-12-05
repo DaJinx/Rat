@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfqpnk4dsktx6"]
+
+[ext_resource type="Script" path="res://Objects/GrappleHook/grapple_hook_point.gd" id="1_c68s4"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dn0q5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jqag2"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s55dr"]
+
+[node name="GrappleHookPoint" type="Node3D"]
+script = ExtResource("1_c68s4")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+
+[node name="Icon" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_dn0q5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jqag2")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_s55dr")

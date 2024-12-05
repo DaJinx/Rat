@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb5ici0gon012"]
+
+[ext_resource type="Script" path="res://Objects/Console2D/Player/Player2D.gd" id="1_y8l8s"]
+[ext_resource type="Script" path="res://Objects/Console2D/Player/dash2D.gd" id="2_20awk"]
+[ext_resource type="Texture2D" uid="uid://c1w2l01ipxkvx" path="res://icon.svg" id="2_gltas"]
+[ext_resource type="Texture2D" uid="uid://bvgpihkn07hq" path="res://Objects/Console2D/Chonkey_Medium.png" id="3_gibrx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2e31y"]
+radius = 6.0
+height = 22.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+process_mode = 1
+collision_layer = 2
+script = ExtResource("1_y8l8s")
+
+[node name="Dash" type="Node" parent="."]
+script = ExtResource("2_20awk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2.38419e-07, 1)
+scale = Vector2(0.15625, 0.265625)
+texture = ExtResource("2_gltas")
+
+[node name="ChonkeyMedium" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.595, -4.52)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_gibrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_2e31y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+
+[node name="AudioPlayers" type="Node2D" parent="."]
+
+[node name="AudioJump" type="AudioStreamPlayer2D" parent="AudioPlayers"]
+
+[node name="AudioHurt" type="AudioStreamPlayer2D" parent="AudioPlayers"]
+
+[node name="AudioDeath" type="AudioStreamPlayer2D" parent="AudioPlayers"]

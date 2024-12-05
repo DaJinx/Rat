@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://chn7ikwrnnhl3"]
+
+[ext_resource type="Script" path="res://Objects/GrindRail.gd" id="1_qboxw"]
+
+[sub_resource type="Curve3D" id="Curve3D_kw6bo"]
+_data = {
+"points": PackedVector3Array(0.061366, -0.0690663, 0.527782, -0.061366, 0.0690663, -0.527782, 0.987086, 0, -0.00662791, 0.583781, -0.0163317, 0.00133276, -0.583781, 0.0163317, -0.00133276, -0.00360144, 0.00952148, -1.00379, -0.0219474, 0.00322342, -0.651373, 0.0219474, -0.00322342, 0.651373, -1.01178, 0.0054729, 0.000840515, -0.463379, 0.0168682, -0.0213896, 0.463379, -0.0168682, 0.0213896, 0, 0.0403146, 0.956501, -0.0534272, -0.0293783, 0.685697, 0.0534272, 0.0293783, -0.685697, 0.991041, 0.0026046, -0.00356304),
+"tilts": PackedFloat32Array(-0.00656158, 0, 0, 0.00582766, 0)
+}
+point_count = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_qepdk"]
+
+[node name="Path3D" type="Path3D"]
+curve = SubResource("Curve3D_kw6bo")
+script = ExtResource("1_qboxw")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.99336, 0.00836903, 0.114528, 0.00650663, 0.991602, -0.128899, -0.114648, 0.128789, 0.985004, 0.987086, 0, -0.00662791)
+
+[node name="DisplayMesh" type="MeshInstance3D" parent="PathFollow3D"]
+transform = Transform3D(0.1, 1.86265e-10, -2.77556e-18, -1.86265e-10, 0.1, -1.49012e-09, 0, 1.49012e-09, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_qepdk")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." groups=["Rail"]]
+use_collision = true
+collision_mask = 2
+polygon = PackedVector2Array(0, 0, -0.000168434, 0.0478645, 0.0861145, 0.0471526, 0.0851619, -0.00208521)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.01
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false

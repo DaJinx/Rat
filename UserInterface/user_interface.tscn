@@ -1,0 +1,234 @@
+[gd_scene load_steps=17 format=3 uid="uid://bvyjvru5lhps0"]
+
+[ext_resource type="Script" path="res://scripts/GameUIi.gd" id="1_3kdmm"]
+[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://assets/Textures/coin.png" id="2_8qxpn"]
+[ext_resource type="PackedScene" uid="uid://dqsa32rbdxpjp" path="res://Objects/Controllers/ControllerDisplay.tscn" id="3_ttt4r"]
+
+[sub_resource type="SystemFont" id="SystemFont_1ixsq"]
+font_names = PackedStringArray("Star Choco")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_ij7n8"]
+font_names = PackedStringArray("Star Choco")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mlqsu"]
+font = SubResource("SystemFont_ij7n8")
+font_size = 25
+font_color = Color(0.996094, 0.691406, 0.261719, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkr13"]
+font = SubResource("SystemFont_ij7n8")
+font_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.466667)
+
+[sub_resource type="LabelSettings" id="LabelSettings_igq7x"]
+font = SubResource("SystemFont_ij7n8")
+font_size = 50
+font_color = Color(0.996094, 0.691406, 0.261719, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gbxs"]
+
+[sub_resource type="Sky" id="Sky_6exh6"]
+sky_material = SubResource("ProceduralSkyMaterial_2gbxs")
+
+[sub_resource type="Environment" id="Environment_xd1td"]
+background_mode = 2
+sky = SubResource("Sky_6exh6")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.71
+ambient_light_energy = 1.15
+tonemap_mode = 2
+tonemap_exposure = 0.9
+tonemap_white = 1.1
+ssao_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 0.35
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 0.25
+volumetric_fog_density = 0.0025
+volumetric_fog_emission = Color(1, 1, 1, 1)
+
+[sub_resource type="World3D" id="World3D_s4j3j"]
+environment = SubResource("Environment_xd1td")
+
+[sub_resource type="Animation" id="Animation_r18mh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tl5de"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0431373, 0.0431373, 0.0431373, 0), Color(0.0768358, 0.0768358, 0.0768358, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jub36"]
+resource_name = "fade_to_clear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0784314, 0.0784314, 0.0784314, 1), Color(0.0430392, 0.0430392, 0.0430392, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ok4me"]
+_data = {
+"RESET": SubResource("Animation_r18mh"),
+"fade_to_black": SubResource("Animation_tl5de"),
+"fade_to_clear": SubResource("Animation_jub36")
+}
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kdmm")
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="CollectableTexture" type="TextureRect" parent="UserInterface"]
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 122.0
+offset_bottom = 121.0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinTexture" type="TextureRect" parent="UserInterface"]
+offset_left = 28.0
+offset_top = 122.0
+offset_right = 118.0
+offset_bottom = 175.0
+texture = ExtResource("2_8qxpn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinsLabel" type="Label" parent="UserInterface"]
+offset_left = 88.0
+offset_top = 134.0
+offset_right = 172.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "X 3000"
+label_settings = SubResource("LabelSettings_mlqsu")
+
+[node name="InfoBox" type="Label" parent="UserInterface"]
+offset_left = 225.0
+offset_top = 2.0
+offset_right = 958.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Controller Type: 
+Last Input:
+FPS: "
+label_settings = SubResource("LabelSettings_bkr13")
+vertical_alignment = 1
+
+[node name="CollectableLabel" type="Label" parent="UserInterface"]
+offset_left = 136.0
+offset_top = 50.0
+offset_right = 205.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "x 0"
+label_settings = SubResource("LabelSettings_igq7x")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UserInterface"]
+modulate = Color(1, 1, 1, 0.482353)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -433.0
+offset_right = 823.0
+offset_bottom = 127.0
+grow_vertical = 0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UserInterface/SubViewportContainer"]
+own_world_3d = true
+world_3d = SubResource("World3D_s4j3j")
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+msaa_3d = 1
+screen_space_aa = 1
+size = Vector2i(820, 560)
+render_target_update_mode = 4
+
+[node name="ControllerCam" type="Camera3D" parent="UserInterface/SubViewportContainer/SubViewport"]
+cull_mask = 1048065
+
+[node name="ControllerDisplay" parent="UserInterface/SubViewportContainer/SubViewport/ControllerCam" instance=ExtResource("3_ttt4r")]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, -0.0885849, -1.63259)
+
+[node name="TransitionFade" type="Control" parent="UserInterface"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UserInterface/TransitionFade"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/TransitionFade"]
+libraries = {
+"": SubResource("AnimationLibrary_ok4me")
+}

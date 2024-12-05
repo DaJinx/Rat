@@ -1,0 +1,131 @@
+[gd_scene load_steps=17 format=3 uid="uid://d1p0cwvn1hlcs"]
+
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="1_iijci"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_4t6t0"]
+[ext_resource type="PackedScene" uid="uid://b86f1aqdcdlkw" path="res://scenes/beehave/compare_actions/CheckTargetDist.tscn" id="3_52eub"]
+[ext_resource type="PackedScene" uid="uid://5653b3wcf25p" path="res://scenes/beehave/inputs/InputNone.tscn" id="4_d3e5r"]
+[ext_resource type="PackedScene" uid="uid://bqi2hrppoou6q" path="res://scenes/beehave/set_actions/SetRootMotionFalse.tscn" id="4_vqx17"]
+[ext_resource type="PackedScene" uid="uid://t8wg0g461fli" path="res://scenes/beehave/wait/ResetWait.tscn" id="5_h0iya"]
+[ext_resource type="PackedScene" uid="uid://ch58eya8rlua6" path="res://scenes/beehave/compare_actions/IsLookedAroundFalse.tscn" id="6_1kgwm"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/leaves/blackboard_set.gd" id="6_o0oe3"]
+[ext_resource type="PackedScene" uid="uid://dka5as0tjf4rh" path="res://scenes/beehave/set_actions/SetRotateTowardsTargetFalse.tscn" id="7_l3n5i"]
+[ext_resource type="Script" path="res://scripts/beehave/wait/wait.gd" id="8_dfk31"]
+[ext_resource type="PackedScene" uid="uid://rnknofcns6ch" path="res://scenes/beehave/inputs/InputLeft.tscn" id="8_n7c65"]
+[ext_resource type="PackedScene" uid="uid://g2idcje0d0ll" path="res://scenes/beehave/animations/SetAnimMoveSpeed.tscn" id="8_ttxse"]
+[ext_resource type="PackedScene" uid="uid://bpmbb56ftoyja" path="res://scenes/beehave/inputs/InputRight.tscn" id="9_pe7t2"]
+[ext_resource type="PackedScene" uid="uid://bdnrgdpa3fa5c" path="res://scenes/beehave/wait/Wait.tscn" id="10_ocgtl"]
+[ext_resource type="PackedScene" uid="uid://ppcsagqgu032" path="res://scenes/beehave/inputs/InputForwards.tscn" id="11_gr1md"]
+[ext_resource type="PackedScene" uid="uid://cerhh2ei5vqf4" path="res://scenes/beehave/set_actions/SetRootMotionTrue.tscn" id="13_wtlfn"]
+
+[node name="CheckSuspicion" type="Node"]
+script = ExtResource("1_iijci")
+
+[node name="StayIfClose" type="Node" parent="."]
+script = ExtResource("2_4t6t0")
+
+[node name="CheckTargetDist" parent="StayIfClose" instance=ExtResource("3_52eub")]
+left_operand = "get_value(\"agent_target_dist\")"
+right_operand = "0.5"
+
+[node name="SetRootMotionFalse" parent="StayIfClose" instance=ExtResource("4_vqx17")]
+
+[node name="InputNone" parent="StayIfClose" instance=ExtResource("4_d3e5r")]
+
+[node name="ResetWait" parent="StayIfClose" instance=ExtResource("5_h0iya")]
+wait_id = 1
+
+[node name="LookAround" type="Node" parent="StayIfClose"]
+script = ExtResource("1_iijci")
+
+[node name="StandStill" type="Node" parent="StayIfClose/LookAround"]
+script = ExtResource("2_4t6t0")
+
+[node name="IsLookedAroundTrue" parent="StayIfClose/LookAround/StandStill" instance=ExtResource("6_1kgwm")]
+
+[node name="InputNone" parent="StayIfClose/LookAround/StandStill" instance=ExtResource("4_d3e5r")]
+
+[node name="CheckOutArea" type="Node" parent="StayIfClose/LookAround"]
+script = ExtResource("2_4t6t0")
+
+[node name="SetAnimMoveSpeed" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("8_ttxse")]
+value = "0.5"
+
+[node name="SetLookAtTargetFalse" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("7_l3n5i")]
+
+[node name="InputNone" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("4_d3e5r")]
+
+[node name="Wait" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("8_dfk31")
+time = 2.0
+reset_wait_after = true
+wait_id = 93418242
+
+[node name="InputLeft" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("8_n7c65")]
+
+[node name="Wait2" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("8_dfk31")
+time = 1.0
+reset_wait_after = true
+wait_id = 70488111
+
+[node name="InputNone2" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("4_d3e5r")]
+
+[node name="Wait3" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("8_dfk31")
+time = 5.0
+reset_wait_after = true
+wait_id = 14802385
+
+[node name="InputRight" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("9_pe7t2")]
+
+[node name="Wait4" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("8_dfk31")
+time = 2.0
+reset_wait_after = true
+wait_id = 81448005
+
+[node name="InputNone3" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("4_d3e5r")]
+
+[node name="Wait5" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("8_dfk31")
+time = 5.0
+reset_wait_after = true
+wait_id = 46779820
+
+[node name="InputLeft2" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("8_n7c65")]
+
+[node name="Wait6" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("8_dfk31")
+time = 1.0
+reset_wait_after = true
+wait_id = 77672671
+
+[node name="InputNone4" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("4_d3e5r")]
+
+[node name="Wait7" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("10_ocgtl")]
+time = 3.0
+reset_wait_after = true
+wait_id = 10629233
+
+[node name="SetLookedAroundTrue" type="Node" parent="StayIfClose/LookAround/CheckOutArea"]
+script = ExtResource("6_o0oe3")
+key = "\"looked_around\""
+value = "true"
+
+[node name="ResetWait" parent="StayIfClose/LookAround/CheckOutArea" instance=ExtResource("5_h0iya")]
+wait_id = 37654269
+
+[node name="MoveToTarget" type="Node" parent="."]
+script = ExtResource("2_4t6t0")
+
+[node name="SetRootMotionTrue" parent="MoveToTarget" instance=ExtResource("13_wtlfn")]
+
+[node name="SetAnimMoveSpeed" parent="MoveToTarget" instance=ExtResource("8_ttxse")]
+
+[node name="InputNone" parent="MoveToTarget" instance=ExtResource("4_d3e5r")]
+
+[node name="Wait" parent="MoveToTarget" instance=ExtResource("10_ocgtl")]
+time = 2.0
+wait_id = 37654269
+
+[node name="InputForwards" parent="MoveToTarget" instance=ExtResource("11_gr1md")]

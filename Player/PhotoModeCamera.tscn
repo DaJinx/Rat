@@ -1,0 +1,853 @@
+[gd_scene load_steps=14 format=3 uid="uid://b7mox6kxer8pl"]
+
+[ext_resource type="Script" path="res://Player/PhotoModeCamera.gd" id="1_32tvf"]
+[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="2_72lux"]
+[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://assets/Textures/coin.png" id="3_1mcwq"]
+
+[sub_resource type="SystemFont" id="SystemFont_1ixsq"]
+font_names = PackedStringArray("Star Choco")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_w8nnk"]
+font_color = Color(1, 1, 0.662745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_72583"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_1if7y"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_6rnkb"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_rjwra"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xix8"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_cl02x"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjxbq"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_kt2pi"]
+font_size = 14
+
+[node name="PhotoModeCamera" type="Camera3D"]
+script = ExtResource("1_32tvf")
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_72lux")
+
+[node name="CollectableTexture" type="TextureRect" parent="UserInterface/GameUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00416667
+anchor_top = 0.412963
+anchor_right = -0.00416667
+anchor_bottom = 0.412963
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 122.0
+offset_bottom = 121.0
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinTexture" type="TextureRect" parent="UserInterface/GameUI"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 122.0
+offset_right = 118.0
+offset_bottom = 175.0
+texture = ExtResource("3_1mcwq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CollectableLabel" type="Label" parent="UserInterface/GameUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Press Special to scroll through tabs."
+label_settings = SubResource("LabelSettings_w8nnk")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="UserInterface/GameUI"]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 85.0
+offset_right = 942.0
+offset_bottom = 498.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="UserInterface/GameUI/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UserInterface/GameUI/Panel/HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Move
+Camera"
+label_settings = SubResource("LabelSettings_72583")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="UserInterface/GameUI/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UserInterface/GameUI/Panel/HBoxContainer/Button5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Camera
+Settings"
+label_settings = SubResource("LabelSettings_1if7y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="UserInterface/GameUI/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UserInterface/GameUI/Panel/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lighting"
+label_settings = SubResource("LabelSettings_6rnkb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="UserInterface/GameUI/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UserInterface/GameUI/Panel/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Posing"
+label_settings = SubResource("LabelSettings_rjwra")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button6" type="Button" parent="UserInterface/GameUI/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UserInterface/GameUI/Panel/HBoxContainer/Button6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time"
+label_settings = SubResource("LabelSettings_5xix8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="UserInterface/GameUI/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UserInterface/GameUI/Panel/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Other"
+label_settings = SubResource("LabelSettings_cl02x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CameraSettings" type="VBoxContainer" parent="UserInterface/GameUI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = 59.0
+offset_right = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Animated"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Particles and wind is unpaused.
+Good for wallpapers."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Aperture"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Makes the background blurry."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "FOV"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "????"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Different kinds of post processing filters."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "???"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/CameraSettings/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Normal, transparent (screenshots only,
+not videos), greenscreen skybox,
+or greenscreen everything that isnt player."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="Lighting" type="VBoxContainer" parent="UserInterface/GameUI/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = 59.0
+offset_right = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Lighting"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Animated"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Particles and wind is unpaused.
+Good for wallpapers."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Lighting"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Aperture"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Makes the background blurry."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Lighting"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Lighting/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "FOV"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Lighting"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Filter"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Different kinds of post processing filters."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Lighting"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Background"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Lighting/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Normal, transparent (screenshots only,
+not videos), greenscreen skybox,
+or greenscreen everything that isnt player."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="Posing" type="VBoxContainer" parent="UserInterface/GameUI/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = 59.0
+offset_right = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Posing"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Animated"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Particles and wind is unpaused.
+Good for wallpapers."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Posing"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Aperture"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Makes the background blurry."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Posing"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Posing/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "FOV"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Posing"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Filter"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Different kinds of post processing filters."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Posing"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Background"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Posing/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Normal, transparent (screenshots only,
+not videos), greenscreen skybox,
+or greenscreen everything that isnt player."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="Time" type="VBoxContainer" parent="UserInterface/GameUI/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 59.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Time"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Time/VBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Animated"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Time/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Particles and wind is unpaused.
+Good for wallpapers."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Time"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Time/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Aperture"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Time/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Makes the background blurry."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Time"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Time/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "FOV"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Time"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Time/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Filter"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Time/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Different kinds of post processing filters."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Time"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Time/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Background"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Time/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Time/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Normal, transparentthat isnt player."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="Other" type="VBoxContainer" parent="UserInterface/GameUI/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 59.0
+offset_right = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Other"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Other/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Other/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Filter"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Other/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Other/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Different kinds of post processing filters."
+label_settings = SubResource("LabelSettings_kt2pi")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UserInterface/GameUI/Panel/Other"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/GameUI/Panel/Other/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI/Panel/Other/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Background"
+label_settings = SubResource("LabelSettings_vjxbq")
+
+[node name="CheckBox" type="CheckBox" parent="UserInterface/GameUI/Panel/Other/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="CoinsLabel2" type="Label" parent="UserInterface/GameUI/Panel/Other/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "Normal, transparent (screenshots only,
+not videos), greenscreen skybox,
+or greenscreen everything that isnt player."
+label_settings = SubResource("LabelSettings_kt2pi")

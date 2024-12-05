@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cygv6ksxo7ux2"]
+
+[ext_resource type="Script" path="res://CameraControllers/lock_on_component.gd" id="1_mmg6f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f63qt"]
+
+[node name="LockOnComponent" type="Area3D"]
+collision_layer = 16
+collision_mask = 16
+monitoring = false
+script = ExtResource("1_mmg6f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_f63qt")

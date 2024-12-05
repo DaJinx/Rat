@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca2sab0wysjjg"]
+
+[ext_resource type="Script" path="res://CameraControllers/room_camera.gd" id="1_ybnbm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ba42t"]
+size = Vector3(5, 2, 3)
+
+[sub_resource type="PrismMesh" id="PrismMesh_t0waa"]
+size = Vector3(0.5, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4j2by"]
+
+[node name="CavernCamera" type="Node3D"]
+script = ExtResource("1_ybnbm")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1173, 0)
+shape = SubResource("BoxShape3D_ba42t")
+
+[node name="CameraTransform" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraTransform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.329246)
+visible = false
+mesh = SubResource("PrismMesh_t0waa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CameraTransform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.441328)
+visible = false
+mesh = SubResource("BoxMesh_4j2by")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

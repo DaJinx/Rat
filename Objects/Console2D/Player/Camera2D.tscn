@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://llx4y05tvqae"]
+
+[ext_resource type="Script" path="res://Objects/Console2D/Player/Camera2D.gd" id="1_reimj"]
+
+[node name="Camera2D" type="Camera2D"]
+process_mode = 3
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("1_reimj")

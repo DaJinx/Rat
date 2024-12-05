@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1rq01i14jutk"]
+
+[ext_resource type="Script" path="res://Objects/Platforms/BounceBox.gd" id="1_7crcu"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ip0h7"]
+top_radius = 1.5
+bottom_radius = 1.5
+height = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_871jj"]
+height = 0.792152
+radius = 1.57724
+
+[node name="BounceBox" type="Node3D"]
+script = ExtResource("1_7crcu")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.202051, 0)
+mesh = SubResource("CylinderMesh_ip0h7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248389, 0)
+shape = SubResource("CylinderShape3D_871jj")

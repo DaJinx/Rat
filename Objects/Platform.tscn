@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmjlvn7jqrfsx"]
+
+[ext_resource type="PackedScene" uid="uid://dfc0ecsjufu7v" path="res://Scenes/PlatformBlue.tscn" id="1_r1mab"]
+
+[node name="Platform" type="Node3D"]
+
+[node name="PlatformBlue4" parent="." instance=ExtResource("1_r1mab")]
+transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 0, 0, 0)

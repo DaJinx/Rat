@@ -1,0 +1,3 @@
+res://Main.tscn
+res://components/player/vfx/dust_mat.tres
+res://scripts/level.gd

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhn4uvk0yntrd"]
+
+[ext_resource type="PackedScene" uid="uid://bb5ici0gon012" path="res://Objects/Console2D/Player/Player2D.tscn" id="1_716ii"]
+[ext_resource type="Script" path="res://Objects/Console2D/Levels/level.gd" id="1_kabqm"]
+[ext_resource type="PackedScene" uid="uid://bmgl40ju7v42c" path="res://Objects/Console2D/Levels/room.tscn" id="3_fofc5"]
+[ext_resource type="PackedScene" uid="uid://cf7y7a20r833i" path="res://Objects/Console2D/Collectables/DiamondCheese.tscn" id="3_qdk1j"]
+[ext_resource type="PackedScene" uid="uid://llx4y05tvqae" path="res://Objects/Console2D/Player/Camera2D.tscn" id="4_dktu6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1bmlr"]
+distance = 22.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_47kag"]
+normal = Vector2(1, 0)
+distance = -76.0
+
+[node name="TestLevel" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_kabqm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Player2D" parent="." instance=ExtResource("1_716ii")]
+
+[node name="Camera2D" parent="." instance=ExtResource("4_dktu6")]
+position = Vector2(54, -32)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="DiamondCheese" parent="." instance=ExtResource("3_qdk1j")]
+position = Vector2(52, 27)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 82)
+shape = SubResource("WorldBoundaryShape2D_1bmlr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 82)
+shape = SubResource("WorldBoundaryShape2D_47kag")
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="Room" parent="Rooms" instance=ExtResource("3_fofc5")]
+position = Vector2(47, -21)
+
+[node name="Room2" parent="Rooms" instance=ExtResource("3_fofc5")]
+position = Vector2(298, -21)
+
+[node name="Room3" parent="Rooms" instance=ExtResource("3_fofc5")]
+position = Vector2(549, -21)

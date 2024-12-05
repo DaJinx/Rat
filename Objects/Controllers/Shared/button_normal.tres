@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://60qxypofyvk8"]
+
+[ext_resource type="Texture2D" uid="uid://5b550v32qls" path="res://Objects/Controllers/Models/PS4/gltf_embedded_11_2.png" id="1_kgugg"]
+
+[resource]
+albedo_texture = ExtResource("1_kgugg")

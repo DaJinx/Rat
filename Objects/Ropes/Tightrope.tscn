@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bstbtb7684t57"]
+
+[ext_resource type="Script" path="res://Objects/Ropes/tightrope.gd" id="1_t5lau"]
+[ext_resource type="PackedScene" uid="uid://bwee2gkxw4t2r" path="res://Objects/Ropes/RopeEndPiece.tscn" id="2_gd7cs"]
+
+[node name="Tightrope" type="Node3D"]
+script = ExtResource("1_t5lau")
+
+[node name="End_1" parent="." instance=ExtResource("2_gd7cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00155, 0, 0)
+
+[node name="End_2" parent="." instance=ExtResource("2_gd7cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02392, 0, 0)

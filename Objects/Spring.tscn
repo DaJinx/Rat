@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://br0aqx1m86yvo"]
+
+[ext_resource type="Script" path="res://Objects/spring.gd" id="1_86ejt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pvdut"]
+height = 0.131
+radius = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rtv7h"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.125
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c4xk6"]
+height = 0.181
+radius = 1.016
+
+[node name="Spring" type="Node3D"]
+script = ExtResource("1_86ejt")
+
+[node name="Top" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18843, 0)
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Top"]
+shape = SubResource("CylinderShape3D_pvdut")
+
+[node name="BottomPlatform2" type="MeshInstance3D" parent="Top"]
+mesh = SubResource("CylinderMesh_rtv7h")
+skeleton = NodePath("../..")
+
+[node name="Area3D2" type="Area3D" parent="Top"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Top/Area3D2"]
+shape = SubResource("CylinderShape3D_c4xk6")
+
+[node name="Bottom" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0557346, 0)
+collision_mask = 2
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bottom"]
+shape = SubResource("CylinderShape3D_pvdut")
+
+[node name="BottomPlatform2" type="MeshInstance3D" parent="Bottom"]
+mesh = SubResource("CylinderMesh_rtv7h")
+skeleton = NodePath("../..")
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]
+node_a = NodePath("../Bottom")
+node_b = NodePath("../Top")
+linear_limit_y/upper_distance = 1.0
+
+[connection signal="body_entered" from="Top/Area3D2" to="." method="_on_area_3d_body_entered"]

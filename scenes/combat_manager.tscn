@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgrvmf3c5wu2s"]
+
+[ext_resource type="Script" path="res://Scenes/combat_manager.gd" id="1_or7to"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_13ywj"]
+size = Vector3(0.2, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7is2h"]
+size = Vector3(1, 1, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mek3f"]
+size = Vector3(1, 1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hliqs"]
+
+[node name="CombatManager" type="Node3D"]
+script = ExtResource("1_or7to")
+
+[node name="EdgeDisplayMesh_1" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_13ywj")
+
+[node name="EdgeDisplayMesh_2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_13ywj")
+
+[node name="EdgeDisplayMesh_3" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7is2h")
+
+[node name="EdgeDisplayMesh_4" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_mek3f")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="AreaCollisionShape" type="CollisionShape3D" parent="Area3D"]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_hliqs")

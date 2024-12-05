@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://g2heuwwm0lpf"]
+
+[ext_resource type="Script" path="res://Objects/Controllers/Shared/button.gd" id="1_gs7hd"]
+[ext_resource type="PackedScene" uid="uid://umlhwwbr1k0k" path="res://Objects/Controllers/Models/Keyboard/KeyboardController_NormalKey.fbx" id="1_rkskj"]
+
+[node name="KeyboardKey" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12882, 0, 1.35932)
+script = ExtResource("1_gs7hd")
+
+[node name="KeyRoot" type="Node3D" parent="."]
+
+[node name="NormalKey" parent="KeyRoot" instance=ExtResource("1_rkskj")]

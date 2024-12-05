@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf7y7a20r833i"]
+
+[ext_resource type="Texture2D" uid="uid://c1w2l01ipxkvx" path="res://icon.svg" id="1_ibl46"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d58xp"]
+
+[node name="DiamondCheese" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_ibl46")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_d58xp")

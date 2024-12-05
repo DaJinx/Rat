@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ditvd6pn6iict"]
+
+[ext_resource type="Texture2D" uid="uid://cwubbv03p57em" path="res://Assets/Textures/PrototypeTextures/texture_01.png" id="1_rabcg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0eva"]
+albedo_texture = ExtResource("1_rabcg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_g1qyr"]
+material = SubResource("StandardMaterial3D_w0eva")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tkius"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 2.02143, 0)
+mesh = SubResource("BoxMesh_g1qyr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_tkius")

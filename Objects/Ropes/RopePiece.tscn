@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1nef1gswn7xa"]
+
+[ext_resource type="Script" path="res://Objects/Ropes/rope_piece.gd" id="1_jigc6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bbrj7"]
+radius = 0.22
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jkup2"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.0
+
+[sub_resource type="Curve3D" id="Curve3D_d6fk3"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_jigc6")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.518454, 0)
+shape = SubResource("CapsuleShape3D_bbrj7")
+
+[node name="Joint" type="PinJoint3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.510657, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999976, 0, 0.00685909, 0, 1, 0, -0.00685909, 0, 0.999976, 0, -0.506325, 0)
+mesh = SubResource("CylinderMesh_jkup2")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_d6fk3")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]

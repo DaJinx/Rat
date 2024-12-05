@@ -1,0 +1,181 @@
+[gd_scene load_steps=22 format=3 uid="uid://dqsa32rbdxpjp"]
+
+[ext_resource type="Script" path="res://Objects/Controllers/controller_display.gd" id="1_ph05m"]
+[ext_resource type="Script" path="res://Objects/Controllers/controller.gd" id="2_ilk1b"]
+[ext_resource type="PackedScene" uid="uid://jiksrkt5fu86" path="res://Objects/Controllers/Models/Keyboard/KeyboardController.fbx" id="2_jy5di"]
+[ext_resource type="PackedScene" uid="uid://cx4y0yu4ei0f" path="res://Objects/Controllers/Shared/thumbstick.tscn" id="2_ory7t"]
+[ext_resource type="PackedScene" uid="uid://c11iatnqwneod" path="res://Objects/Controllers/Shared/keyboard_key_movement.tscn" id="3_207r3"]
+[ext_resource type="PackedScene" uid="uid://g2heuwwm0lpf" path="res://Objects/Controllers/Shared/keyboard_key.tscn" id="3_dxmky"]
+[ext_resource type="PackedScene" uid="uid://dxmkug6vwnot4" path="res://Objects/Controllers/Shared/keyboard_key_fat.tscn" id="4_hwt7o"]
+[ext_resource type="PackedScene" uid="uid://807eei33cp63" path="res://Objects/Controllers/Shared/keyboard_key_escape.tscn" id="6_wg2cv"]
+[ext_resource type="PackedScene" uid="uid://5sbfanyvyb0w" path="res://Objects/Controllers/Models/Keyboard/KeyboardController_Keyless.fbx" id="7_xt5sc"]
+[ext_resource type="PackedScene" uid="uid://tmoubb566lkn" path="res://Objects/Controllers/Models/PS4/ps4.tscn" id="9_ae1xi"]
+[ext_resource type="PackedScene" uid="uid://dk4vasar0balt" path="res://Objects/Controllers/Models/PS4/PS4_Face_Top.fbx" id="9_y3pdu"]
+[ext_resource type="Script" path="res://Objects/Controllers/Shared/button.gd" id="10_462a5"]
+[ext_resource type="PackedScene" uid="uid://ctq25v66wvu6j" path="res://Objects/Controllers/Models/PS4/PS4_Face_Bot.fbx" id="12_4mdhd"]
+[ext_resource type="PackedScene" uid="uid://e6ubahbxmxny" path="res://Objects/Controllers/Models/PS4/PS4_Face_Left.fbx" id="12_lowdr"]
+[ext_resource type="PackedScene" uid="uid://bsg5v02it0kjo" path="res://Objects/Controllers/Models/PS4/PS4_BumperR.fbx" id="13_45hy7"]
+[ext_resource type="PackedScene" uid="uid://csb0si66lr7vu" path="res://Objects/Controllers/Models/PS4/PS4_Face_Right.fbx" id="14_au5ae"]
+[ext_resource type="PackedScene" uid="uid://ca3ybewxm0e5p" path="res://Objects/Controllers/Models/PS4/PS4_Dpad_Down.fbx" id="16_dlvgk"]
+[ext_resource type="PackedScene" uid="uid://bef5014xic6qa" path="res://Objects/Controllers/Models/PS4/PS4_Dpad_Top.fbx" id="16_ve271"]
+[ext_resource type="PackedScene" uid="uid://coewnpweodwas" path="res://Objects/Controllers/Models/PS4/PS4_Dpad_Left.fbx" id="17_2hle4"]
+[ext_resource type="PackedScene" uid="uid://h1v8gimn36na" path="res://Objects/Controllers/Models/PS4/PS4_Dpad_Right.fbx" id="18_uhl4y"]
+[ext_resource type="PackedScene" uid="uid://biq5x425rs47q" path="res://Objects/Controllers/Models/PS4/PS4_BumperL.fbx" id="20_ivrp4"]
+
+[node name="ControllerDisplay" type="Node3D"]
+script = ExtResource("1_ph05m")
+
+[node name="Keyboard" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.848856, 0, -0.391916)
+visible = false
+
+[node name="KeyboardController_Keyless" parent="Keyboard" instance=ExtResource("7_xt5sc")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="KeyboardController" parent="Keyboard" instance=ExtResource("2_jy5di")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+visible = false
+
+[node name="KeyboardKey_S" parent="Keyboard" instance=ExtResource("3_207r3")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.352611, 0.639915, 1.02848)
+input = ""
+clickAmount = 0.15
+
+[node name="KeyboardKey_D" parent="Keyboard" instance=ExtResource("3_207r3")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.347944, 0.639915, 1.02848)
+input = ""
+
+[node name="KeyboardKey_A" parent="Keyboard" instance=ExtResource("3_207r3")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.06328, 0.639915, 1.02848)
+input = ""
+
+[node name="KeyboardKey_Shift" parent="Keyboard" instance=ExtResource("4_hwt7o")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.0115337, 0.64, 1.74175)
+input = ""
+
+[node name="KeyboardKey_Ctrl" parent="Keyboard" instance=ExtResource("4_hwt7o")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.39226, 0.64, 1.74175)
+input = ""
+
+[node name="KeyboardKey_Tab" parent="Keyboard" instance=ExtResource("4_hwt7o")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -1.76424, 0.64, 0.711056)
+input = ""
+
+[node name="KeyboardKey_Space" parent="Keyboard" instance=ExtResource("4_hwt7o")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.38405, 0.64, 1.74175)
+input = ""
+
+[node name="KeyboardKey_Alt" parent="Keyboard" instance=ExtResource("3_dxmky")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.749, 0.64, 1.033)
+
+[node name="KeyboardKey_Alt2" parent="Keyboard" instance=ExtResource("3_dxmky")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.049, 0.64, 1.033)
+
+[node name="KeyboardKey_Pause" parent="Keyboard" instance=ExtResource("6_wg2cv")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.7553, 0.64, -0.364092)
+input = ""
+
+[node name="Switch_Docked" type="Node3D" parent="."]
+visible = false
+
+[node name="Switch_Undocked" type="Node3D" parent="."]
+visible = false
+
+[node name="SwitchPro" type="Node3D" parent="."]
+visible = false
+
+[node name="Gamecube" type="Node3D" parent="."]
+visible = false
+
+[node name="PS4_Root" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.87812, 0.419642, 0)
+
+[node name="PS4" type="Node3D" parent="PS4_Root"]
+rotation_edit_mode = 1
+script = ExtResource("2_ilk1b")
+
+[node name="PS4_Mesh" parent="PS4_Root/PS4" instance=ExtResource("9_ae1xi")]
+
+[node name="PS4_Face_Top" parent="PS4_Root/PS4" instance=ExtResource("9_y3pdu")]
+script = ExtResource("10_462a5")
+buttonName = "PS4_Face_T"
+colour = Color(1, 1, 1, 1)
+
+[node name="PS4_Face_Left" parent="PS4_Root/PS4" instance=ExtResource("12_lowdr")]
+script = ExtResource("10_462a5")
+input = "attack"
+buttonName = "PS4_Face_L"
+colour = Color(1, 1, 1, 1)
+
+[node name="PS4_Face_Right" parent="PS4_Root/PS4" instance=ExtResource("14_au5ae")]
+script = ExtResource("10_462a5")
+input = "dash"
+buttonName = "PS4_Face_R"
+colour = Color(1, 1, 1, 1)
+
+[node name="PS4_Face_Bot" parent="PS4_Root/PS4" instance=ExtResource("12_4mdhd")]
+script = ExtResource("10_462a5")
+input = "jump"
+buttonName = "PS4_Face_D"
+colour = Color(1, 1, 1, 1)
+
+[node name="PS4_Dpad_Top" parent="PS4_Root/PS4" instance=ExtResource("16_ve271")]
+script = ExtResource("10_462a5")
+buttonName = "PS4_DPAD_U"
+
+[node name="PS4_Dpad_Left" parent="PS4_Root/PS4" instance=ExtResource("17_2hle4")]
+script = ExtResource("10_462a5")
+buttonName = "PS4_DPAD_L"
+
+[node name="PS4_Dpad_Right" parent="PS4_Root/PS4" instance=ExtResource("18_uhl4y")]
+script = ExtResource("10_462a5")
+buttonName = "PS4_DPAD_R"
+
+[node name="PS4_Dpad_Down" parent="PS4_Root/PS4" instance=ExtResource("16_dlvgk")]
+script = ExtResource("10_462a5")
+buttonName = "PS4_DPAD_D"
+
+[node name="PS4_BumperL" parent="PS4_Root/PS4" instance=ExtResource("20_ivrp4")]
+script = ExtResource("10_462a5")
+input = "dash"
+buttonName = "PS4_BumperL"
+clickDirection = 1
+colour = Color(0.0666667, 0.0627451, 0.0666667, 1)
+
+[node name="PS4_BumperR" parent="PS4_Root/PS4" instance=ExtResource("13_45hy7")]
+script = ExtResource("10_462a5")
+input = "jump"
+buttonName = "PS4_BumperR"
+clickDirection = 1
+colour = Color(0.0668502, 0.0632622, 0.0685879, 1)
+
+[node name="PS4_ThumbstickLeft" parent="PS4_Root/PS4" instance=ExtResource("2_ory7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74, -0.314, 0.287)
+
+[node name="PS4_ThumbstickRight" parent="PS4_Root/PS4" instance=ExtResource("2_ory7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74, -0.314, 0.287)
+
+[node name="PS5" type="Node3D" parent="."]
+visible = false
+
+[node name="Xbox360" type="Node3D" parent="."]
+visible = false
+
+[node name="XboxOne" type="Node3D" parent="."]
+visible = false
+
+[node name="SteamDeck" type="Node3D" parent="."]
+visible = false
+
+[node name="Unknown" type="Node3D" parent="."]
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.879416, 0.00363916, 0.47604, -0.476054, 0.00672262, 0.87939, -2.08155e-10, -0.999971, 0.00764442, -0.456198, 7.21011, 0)
+light_energy = 0.5
+spot_range = 5.98889
+spot_angle = 53.7397
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.958785, -0.00217203, -0.284124, 0.284133, 0.00732935, 0.958757, -2.08155e-10, -0.999971, 0.00764442, -5.02882, 7.21011, 0)
+directional_shadow_blend_splits = true

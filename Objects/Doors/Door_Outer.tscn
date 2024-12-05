@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://c03eijq5jcscf"]
+
+[ext_resource type="Script" path="res://Objects/Doors/door_outer.gd" id="1_i6un8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cedp1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4dk7"]
+size = Vector3(3.26521, 4.0703, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0471m"]
+size = Vector3(10.0545, 6.26913, 8.84988)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_i6un8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.88496, 0, 0, 0, 0.587737, 0, 0, 0, 0.176898, 0, 4.31065, 0)
+mesh = SubResource("BoxMesh_cedp1")
+
+[node name="Door1_Root" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89464, 2.28408, 0.152462)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Door1_Root"]
+transform = Transform3D(2, 0, 0, 0, 4.607, 0, 0, 0, 0.177, 0.838668, 0, 0)
+mesh = SubResource("BoxMesh_cedp1")
+skeleton = NodePath("../..")
+
+[node name="Door2_Root" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90353, 2.28408, 0.152462)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Door2_Root"]
+transform = Transform3D(2, 0, 0, 0, 4.607, 0, 0, 0, 0.177, -0.942059, 0, 0)
+mesh = SubResource("BoxMesh_cedp1")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0712204, 2.18087, -1.38321)
+shape = SubResource("BoxShape3D_b4dk7")
+
+[node name="NearbyArea" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NearbyArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0736918, 2.90522, 2.55512)
+shape = SubResource("BoxShape3D_0471m")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="NearbyArea" to="." method="_on_nearby_area_body_entered"]
+[connection signal="body_exited" from="NearbyArea" to="." method="_on_nearby_area_body_exited"]
