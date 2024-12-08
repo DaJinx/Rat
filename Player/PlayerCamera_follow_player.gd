@@ -159,4 +159,4 @@ func MouseInputs(event):
 	if event is InputEventMouseMotion:
 		rotationTarget.x -= event.relative.y * mouse_sensitivity
 		rotationTarget.y -= event.relative.x * mouse_sensitivity
-	print("Mouse: ", event)
+	#print("Mouse: ", event)

@@ -110,7 +110,7 @@ func Recovery():
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if !damagedThisAttack  and  body.name == "Player":
-		body.Health.Damage(1, $WeaponRoot/MeshInstance3D2/Area3D.global_position, 50)
+		body.Health.Damage(1, $WeaponRoot/MeshInstance3D2/Area3D.global_position, 20)
 		damagedThisAttack = true
 
 func Damage():

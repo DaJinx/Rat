@@ -11,4 +11,4 @@ func _process(delta):
 
 func Stomped():
 	model.scale = Vector3(1.25, 0.25, 1.25)
-	print("Y")
+	#print("Y")

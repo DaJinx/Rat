@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ch58eya8rlua6" path="res://scenes/beehave/compare_actions/IsLookedAroundFalse.tscn" id="6_1kgwm"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/leaves/blackboard_set.gd" id="6_o0oe3"]
 [ext_resource type="PackedScene" uid="uid://dka5as0tjf4rh" path="res://scenes/beehave/set_actions/SetRotateTowardsTargetFalse.tscn" id="7_l3n5i"]
-[ext_resource type="Script" path="res://scripts/beehave/wait/wait.gd" id="8_dfk31"]
+[ext_resource type="Script" path="res://Scripts/beehave/wait/wait.gd" id="8_dfk31"]
 [ext_resource type="PackedScene" uid="uid://rnknofcns6ch" path="res://scenes/beehave/inputs/InputLeft.tscn" id="8_n7c65"]
 [ext_resource type="PackedScene" uid="uid://g2idcje0d0ll" path="res://scenes/beehave/animations/SetAnimMoveSpeed.tscn" id="8_ttxse"]
 [ext_resource type="PackedScene" uid="uid://bpmbb56ftoyja" path="res://scenes/beehave/inputs/InputRight.tscn" id="9_pe7t2"]

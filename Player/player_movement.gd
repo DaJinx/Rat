@@ -159,7 +159,7 @@ func Move(delta):
 		#speed *= 0.5
 	Player.velocity = Player.velocity.lerp((movement_velocity * force), delta * speed)
 	
-	print("force:", force)
+	#print("force:", force)
 
 # Rotation
 func Rotation(delta):
@@ -169,7 +169,7 @@ func Rotation(delta):
 	 # Only sets a new value while moving.
 	if Vector2(Player.velocity.z, Player.velocity.x).length() > 0:
 		rotation_direction = Vector2(Player.velocity.z, Player.velocity.x).angle()
-		print("Dir: ", rotation_direction)
+		#print("Dir: ", rotation_direction)
 	
 	if Player.is_on_floor():
 		Player.rotation.y = lerp_angle(Player.rotation.y,  rotation_direction,  delta * rotationSpeed)
@@ -218,7 +218,7 @@ func Gravity(delta):
 		coyoteActive = false
 	
 	Player.velocity.y = -gravity
-	print("Gravity: ", gravity)
+	#print("Gravity: ", gravity)
 
 # Landed
 func Landed():

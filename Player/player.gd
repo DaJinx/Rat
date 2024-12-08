@@ -14,7 +14,7 @@ var controlled := true
 @onready var Inputs: Node = $Inputs
 @onready var CameraRoot: Node3D = $CameraRoot
 @onready var Camera: Node3D = %Camera3D
-@onready var lock_on_attachment_point: LockOnComponent = $LockOnComponent
+#@onready var lock_on_attachment_point: LockOnComponent = $LockOnComponent
 
 #region COMPONENTS
 @export_subgroup("Components")

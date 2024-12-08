@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bvyjvru5lhps0"]
 
-[ext_resource type="Script" path="res://scripts/GameUIi.gd" id="1_3kdmm"]
+[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="1_3kdmm"]
 [ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://assets/Textures/coin.png" id="2_8qxpn"]
 [ext_resource type="PackedScene" uid="uid://dqsa32rbdxpjp" path="res://Objects/Controllers/ControllerDisplay.tscn" id="3_ttt4r"]
 

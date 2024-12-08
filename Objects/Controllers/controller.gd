@@ -10,7 +10,7 @@ func _ready():
 func _process(_delta):
 	Gyroscope()
 	Accelerator()
-	print( "Gyro:  ", Gyro.get_calibrated_gyro() )
+	#print( "Gyro:  ", Gyro.get_calibrated_gyro() )
 	#print( "Gyro:  ", Gyro.get_processed_acceleration() )
 
 func _unhandled_input(event):
@@ -44,7 +44,7 @@ func Accelerator():
 		processedAccel.y = 0
 	if abs(processedAccel.z) <= 1:
 		processedAccel.z = 0
-	print("Cheese:   ", processedAccel)
+	#print("Cheese:   ", processedAccel)
 	
 	#var acceleration = Vector3.ZERO
 	#

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b2vrwljrc7cpp" path="res://scenes/beehave/set_actions/SetLockedOnTrue.tscn" id="10_rrtek"]
 [ext_resource type="PackedScene" uid="uid://ynuik1v6nsyt" path="res://scenes/beehave/set_actions/SetCanMoveTrue.tscn" id="11_y0dn0"]
 [ext_resource type="PackedScene" uid="uid://cerhh2ei5vqf4" path="res://scenes/beehave/set_actions/SetRootMotionTrue.tscn" id="13_25apf"]
-[ext_resource type="Script" path="res://scripts/beehave/patrol_move_speed.gd" id="14_irdp8"]
+[ext_resource type="Script" path="res://Scripts/beehave/patrol_move_speed.gd" id="14_irdp8"]
 [ext_resource type="PackedScene" uid="uid://ppcsagqgu032" path="res://scenes/beehave/inputs/InputForwards.tscn" id="15_y1jtp"]
 
 [node name="Patrol" type="Node"]

@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	
-	print("State: ", states.keys()[currentState])
+	#print("State: ", states.keys()[currentState])
 	
 	# On the ground, idle or moving
 	if currentState == states.GROUNDED:

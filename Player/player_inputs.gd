@@ -77,16 +77,17 @@ func MovementInputs(delta):
 	#velocity = movementInput * movement_speed * delta
 	
 	
-	# Turn
+	# Turn around
 	if moveInputLastFrame != Vector3.ZERO  and  Movement.force == 1:
 		var inputDif = (moveInputLastFrame - movementInput).length()
 		#inputDif = abs(inputDif)
 		
-		#print("Input Dif: ", inputDif)
-		print("Input Dif: ", Player.mesh.rotation_degrees.y - Movement.degreesLastFrame)
+		print("Input Dif: ", inputDif, "  ", moveInputLastFrame, "  ", movementInput)
+		#print("Input Dif: ", Player.mesh.rotation_degrees.y - Movement.degreesLastFrame)
 		
 		if inputDif > 0.8: # 1 is the highest value of the exact oppiset side
-			print("Turn")
+			
+			print("Turn: ", inputDif)
 	
 	
 	#var v = velocity.normalized()

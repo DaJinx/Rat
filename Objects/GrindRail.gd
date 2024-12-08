@@ -23,7 +23,7 @@ func _ready():
 func _physics_process(delta):
 	#pass
 	%PathFollow3D.progress += ( move_speed * direction ) * delta
-	print("Progress:", %PathFollow3D.progress)
+	#print("Progress:", %PathFollow3D.progress)
 	if is_instance_valid(connectedPlayer):
 		connectedPlayer.global_position = %PathFollow3D.global_position
 		playerMesh.global_rotation = %PathFollow3D.global_rotation
