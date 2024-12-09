@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byhp3ghf2qiij"
-path="res://.godot/imported/flask.svg-9dd9251cca26fa5197afd6cc37485a42.ctex"
+path="res://.godot/imported/flask.svg-7170a9d468c513b7df5aa45e8e7ffa62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flask.svg"
-dest_files=["res://.godot/imported/flask.svg-9dd9251cca26fa5197afd6cc37485a42.ctex"]
+source_file="res://Assets/flask.svg"
+dest_files=["res://.godot/imported/flask.svg-7170a9d468c513b7df5aa45e8e7ffa62.ctex"]
 
 [params]
 

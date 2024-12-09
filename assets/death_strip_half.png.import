@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bduym4ixwu5rh"
-path="res://.godot/imported/death_strip_half.png-532a16b0d48a2296c5e7391667b7c2a6.ctex"
+path="res://.godot/imported/death_strip_half.png-cc59fb066a89a113647e5bdfad9c35c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/death_strip_half.png"
-dest_files=["res://.godot/imported/death_strip_half.png-532a16b0d48a2296c5e7391667b7c2a6.ctex"]
+source_file="res://Assets/death_strip_half.png"
+dest_files=["res://.godot/imported/death_strip_half.png-cc59fb066a89a113647e5bdfad9c35c5.ctex"]
 
 [params]
 

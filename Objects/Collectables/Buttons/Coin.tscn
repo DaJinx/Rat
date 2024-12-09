@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Coin.gd" id="1_b8wip"]
 [ext_resource type="Material" uid="uid://utcfusyefk1r" path="res://Objects/Collectables/Buttons/Button_Red.tres" id="3_hijvu"]
-[ext_resource type="Texture2D" uid="uid://drk46pes52whg" path="res://assets/Textures/particle.png" id="3_sjsc2"]
+[ext_resource type="Texture2D" uid="uid://drk46pes52whg" path="res://Assets/Textures/particle.png" id="3_sjsc2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gsy7s"]
 

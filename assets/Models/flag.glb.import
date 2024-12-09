@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bl5lrrecsh57e"
-path="res://.godot/imported/flag.glb-e8baf226f47fbbff437db61ecd770627.scn"
+path="res://.godot/imported/flag.glb-31f8218a8283befc05b139c5bffe2392.scn"
 
 [deps]
 
-source_file="res://assets/Models/flag.glb"
-dest_files=["res://.godot/imported/flag.glb-e8baf226f47fbbff437db61ecd770627.scn"]
+source_file="res://Assets/Models/flag.glb"
+dest_files=["res://.godot/imported/flag.glb-31f8218a8283befc05b139c5bffe2392.scn"]
 
 [params]
 

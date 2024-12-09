@@ -33,7 +33,7 @@ var controlled := true
 ## Collision
 @onready var below : Area3D = %BelowArea
 @onready var forward_ray_cast: RayCast3D = $Raycasts/ForwardRayCast
-@onready var ledge_above_ray_cast: RayCast3D = $Raycasts/LedgeAboveRayCast
+#@onready var ledge_above_ray_cast: RayCast3D = $Raycasts/LedgeAboveRayCast
 @onready var lower_forward_ray_cast: RayCast3D = $Raycasts/LowerForwardRayCast
 @onready var hitbox: Area3D = %Hitbox
 
@@ -89,7 +89,7 @@ func _ready() -> void:
 	#below.add_exception(self)
 	#hitbox.add_exception(self)
 	
-	coin_collect_timer.timeout.connect(_on_coin_collect_timer_timeout)
+	#coin_collect_timer.timeout.connect(_on_coin_collect_timer_timeout)
 	
 	await get_tree().create_timer(0.1).timeout
 	#coin_collected.emit(player, coins)

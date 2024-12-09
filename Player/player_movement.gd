@@ -43,6 +43,7 @@ var ledgeGrabCooldown:bool = false
 var rotation_direction: float
 var degreesLastFrame: float
 var disableRotation:bool = false
+var turning:bool = false
 #endregion
 
 #region JUMPING / FALLING
@@ -386,6 +387,35 @@ func MultiJump():
 	animation.play("Jump", 0.5)
 	#await animation.animation_finished
 	Player.PlaySound(jumpSound, 1.12, 0.5)
+
+func Backflip():
+	print("_BACKFLIPPED")
+	jumpCount += 1
+	StateMachine.currentState = StateMachine.states.FALLING
+	
+	if is_instance_valid(Camera):
+		Camera.PlayerJumped()
+	
+	Player.ControllerVibration(0.2, 0, 0.2)
+	
+	# Cosmetics
+	$"../Character/BasicRat_ForPrototype".scale = Vector3(0.2, 0.4, 0.2)
+	JumpTween()
+	animation.play("Jump")
+	#PlaySound(jumpSound, 1.12, 0.5)
+	PlayJumpSound()
+	
+	gravity = (-jump_strength * 2)
+	
+	# Replace with animation
+	var tween = get_tree().create_tween()
+	var newRot = mesh.rotation + Vector3(6,0,0)
+	tween.tween_property(mesh, "rotation", newRot, 0.5)
+	
+	# Make unable to grab ledges the second you jump. That way you dont get stuck when jumping off ledge.
+	canLedgeGrab = false
+	await get_tree().create_timer(0.01).timeout
+	canLedgeGrab = true
 
 # Jump out of dash.
 func LongJump():
@@ -822,6 +852,16 @@ func LandTween():
 	$"../Character/BasicRat_ForPrototype".scale = landSquashSize
 	jumpLandTween.tween_property($"../Character/BasicRat_ForPrototype", "scale", defaultSize, landSquashSpeed)
 
+func TurnAround():
+	turning = true
+	
+	# Replace with animation and delay?
+	var tween = get_tree().create_tween()
+	var newRot = Player.rotation_degrees + Vector3(0,180,0)
+	tween.tween_property(Player, "rotation_degrees", newRot, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	
+	turning = false
 
 func _on_jumping_max_time_timeout() -> void:
 	StateMachine.currentState = StateMachine.states.FALLING

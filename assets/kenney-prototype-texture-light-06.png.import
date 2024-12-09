@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcln5bjy3tb8y"
-path.bptc="res://.godot/imported/kenney-prototype-texture-light-06.png-0edaaea0ada4818a0e6a172a803151a0.bptc.ctex"
+path.bptc="res://.godot/imported/kenney-prototype-texture-light-06.png-777735f9b882211198dc50357e905b48.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/kenney-prototype-texture-light-06.png"
-dest_files=["res://.godot/imported/kenney-prototype-texture-light-06.png-0edaaea0ada4818a0e6a172a803151a0.bptc.ctex"]
+source_file="res://Assets/kenney-prototype-texture-light-06.png"
+dest_files=["res://.godot/imported/kenney-prototype-texture-light-06.png-777735f9b882211198dc50357e905b48.bptc.ctex"]
 
 [params]
 

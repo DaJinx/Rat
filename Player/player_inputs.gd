@@ -7,7 +7,7 @@ extends "player_shared.gd"
 @export_subgroup("Movement")
 var rawMovementInput : Vector3
 var movementInput : Vector3
-var moveInputLastFrame : Vector3
+var lastMovementInput : Vector3
 #endregion
 
 #region JUMPING
@@ -55,7 +55,10 @@ func _physics_process(delta: float) -> void:
 		#owner.owner.add_child(PhotoCam)
 		#PhotoCam.Activate(owner, %Camera3D)
 	#
-	moveInputLastFrame = movementInput
+	
+	#await get_tree().create_timer(1).timeout
+	if movementInput != Vector3.ZERO:
+		lastMovementInput = movementInput
 
 
 
@@ -78,16 +81,8 @@ func MovementInputs(delta):
 	
 	
 	# Turn around
-	if moveInputLastFrame != Vector3.ZERO  and  Movement.force == 1:
-		var inputDif = (moveInputLastFrame - movementInput).length()
-		#inputDif = abs(inputDif)
-		
-		print("Input Dif: ", inputDif, "  ", moveInputLastFrame, "  ", movementInput)
-		#print("Input Dif: ", Player.mesh.rotation_degrees.y - Movement.degreesLastFrame)
-		
-		if inputDif > 0.8: # 1 is the highest value of the exact oppiset side
-			
-			print("Turn: ", inputDif)
+	if movementInput.normalized().dot(lastMovementInput.normalized()) < -0.8:
+		Movement.TurnAround()
 	
 	
 	#var v = velocity.normalized()
@@ -117,8 +112,11 @@ func JumpInput():
 			#else:
 				#Movement.JumpCombat()
 			
-			Movement.JumpStart()
-			Movement.Jump()
+			if !Movement.turning:
+				Movement.JumpStart()
+				Movement.Jump()
+			else:
+				Movement.Backflip()
 		
 		elif StateMachine.currentState == StateMachine.states.DASHING_GROUNDED:
 			Movement.JumpStart()

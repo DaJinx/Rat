@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yj5yx07nva6l"
-path.s3tc="res://.godot/imported/hurt_eyes.png-1671440ff0df92539ec119ead7886742.s3tc.ctex"
+path.s3tc="res://.godot/imported/hurt_eyes.png-e16045af19689fa579233ce9d9ea8c88.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Models/gobot/textures/hurt_eyes.png"
-dest_files=["res://.godot/imported/hurt_eyes.png-1671440ff0df92539ec119ead7886742.s3tc.ctex"]
+source_file="res://Assets/Models/gobot/textures/hurt_eyes.png"
+dest_files=["res://.godot/imported/hurt_eyes.png-e16045af19689fa579233ce9d9ea8c88.s3tc.ctex"]
 
 [params]
 

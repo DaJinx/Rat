@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dishehhur7io2"
-path="res://.godot/imported/white_dot.png-dab4cade863dde270db8ed36fcd20fb2.ctex"
+path="res://.godot/imported/white_dot.png-ee31382e5e0cecda7dc57a5453e924d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/white_dot.png"
-dest_files=["res://.godot/imported/white_dot.png-dab4cade863dde270db8ed36fcd20fb2.ctex"]
+source_file="res://Assets/white_dot.png"
+dest_files=["res://.godot/imported/white_dot.png-ee31382e5e0cecda7dc57a5453e924d4.ctex"]
 
 [params]
 

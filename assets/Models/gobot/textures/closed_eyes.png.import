@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfdf62ci74tew"
-path.s3tc="res://.godot/imported/closed_eyes.png-ff0273846bce3c005fc03b5402dddd09.s3tc.ctex"
+path.s3tc="res://.godot/imported/closed_eyes.png-f435061f031835a0bcc81fbf227f12cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Models/gobot/textures/closed_eyes.png"
-dest_files=["res://.godot/imported/closed_eyes.png-ff0273846bce3c005fc03b5402dddd09.s3tc.ctex"]
+source_file="res://Assets/Models/gobot/textures/closed_eyes.png"
+dest_files=["res://.godot/imported/closed_eyes.png-f435061f031835a0bcc81fbf227f12cc.s3tc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://06ykk08io3p2"
-path="res://.godot/imported/letter-uppercase-square-e.svg-dc3dfde85589b20c3629b137f2ce9edd.ctex"
+path="res://.godot/imported/letter-uppercase-square-e.svg-d7038280d09a0f17234b974e4eae8003.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/letter-uppercase-square-e.svg"
-dest_files=["res://.godot/imported/letter-uppercase-square-e.svg-dc3dfde85589b20c3629b137f2ce9edd.ctex"]
+source_file="res://Assets/letter-uppercase-square-e.svg"
+dest_files=["res://.godot/imported/letter-uppercase-square-e.svg-d7038280d09a0f17234b974e4eae8003.ctex"]
 
 [params]
 

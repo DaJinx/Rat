@@ -27,10 +27,13 @@ func _unhandled_input(event):
 
 func Gyroscope():
 	var orientation = Gyro.gamepad_polling()
-	#quaternion = Quaternion(orientation[3], orientation[2], -orientation[1], orientation[0])
-	quaternion = Quaternion(-orientation[1], orientation[3], orientation[2], orientation[0])
-	# Up/Down, Turn, Barrel Roll, ??
-	#rotation_degrees.x += -90
+	#print("orientation: ", orientation, " ", Gyro.gamepad_polling())
+	
+	if orientation: # If not null
+		#quaternion = Quaternion(orientation[3], orientation[2], -orientation[1], orientation[0])
+		quaternion = Quaternion(-orientation[1], orientation[3], orientation[2], orientation[0])
+		# Up/Down, Turn, Barrel Roll, ??
+		#rotation_degrees.x += -90
 
 func Accelerator():
 	return

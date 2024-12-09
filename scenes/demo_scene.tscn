@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://po63m4srixl4"]
+[gd_scene load_steps=35 format=3 uid="uid://po63m4srixl4"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_llvhm"]
 [ext_resource type="PackedScene" uid="uid://0t0qb3qjq6my" path="res://scenes/PlatformRed.tscn" id="2_4lh3q"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://bjnpq7ch4x54c" path="res://CameraControllers/CavernCamera.tscn" id="21_hw058"]
 [ext_resource type="PackedScene" uid="uid://dmyrflud401tg" path="res://Characters/godot_plush/godot_plush.tscn" id="22_0yehi"]
 [ext_resource type="PackedScene" uid="uid://by21jxo63mkrx" path="res://Objects/Console2D/Console2D_NeedsRepair.tscn" id="23_khxhw"]
-[ext_resource type="PackedScene" uid="uid://07qvfua3qwot" path="res://empty_scene.tscn" id="24_p126i"]
 [ext_resource type="PackedScene" uid="uid://dgq7dutntl7nj" path="res://Objects/Collectables/Cheese/Cheese.tscn" id="25_cyw3n"]
 [ext_resource type="PackedScene" uid="uid://yfrlh04vuq8k" path="res://Characters/TrainingDummy/TrainingDummy.tscn" id="26_sjy58"]
 [ext_resource type="PackedScene" uid="uid://c03eijq5jcscf" path="res://Objects/Doors/Door_Outer.tscn" id="27_ln3fq"]
@@ -82,7 +81,7 @@ script = ExtResource("1_llvhm")
 user_interface = NodePath("UserInterface")
 
 [node name="Player" parent="." instance=ExtResource("2_21dfl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37493, 5, 1.7392)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19088, 5, 1.7392)
 
 [node name="Platforms" type="Node3D" parent="."]
 
@@ -381,7 +380,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15997, 0.00500101, 20.4425
 transform = Transform3D(0.495277, 0, -0.868735, 0, 1, 0, 0.868735, 0, 0.495277, -29.1541, 0.00500077, 14.9104)
 
 [node name="CavernCamera" parent="." instance=ExtResource("21_hw058")]
-transform = Transform3D(-1.3393, 0, -1.39225e-07, 0, 1, 0, 1.17085e-07, 0, -1.59255, 19.7695, 0.00499986, -6.65023)
+transform = Transform3D(-1.3393, 0, -1.39225e-07, 0, 1, 0, 1.17085e-07, 0, -1.59255, 19.8067, 0.0455186, -6.63407)
 
 [node name="Tightrope" parent="." instance=ExtResource("20_uqioh")]
 transform = Transform3D(-0.0216055, 0, 0.999767, 0, 1, 0, -0.999767, 0, -0.0216055, -1.28623, 3.864, -4.87411)
@@ -400,8 +399,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.079
 
 [node name="Console2d2" parent="." instance=ExtResource("23_khxhw")]
 transform = Transform3D(-0.00520095, 0, 0.999986, 0, 1, 0, -0.999986, 0, -0.00520095, -12.1085, 0.00500045, 12.8328)
-
-[node name="EmptyScene" parent="." instance=ExtResource("24_p126i")]
 
 [node name="Coin" parent="." instance=ExtResource("25_cyw3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.95, 11.8827, -9.74864)

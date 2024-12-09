@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c268v7d4kf6e5"
-path="res://.godot/imported/triangle_small.png-1ba4b87c801a12d82970947ff8835366.ctex"
+path="res://.godot/imported/triangle_small.png-ff027b735ef82732e8f3849d0a7a2024.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/triangle_small.png"
-dest_files=["res://.godot/imported/triangle_small.png-1ba4b87c801a12d82970947ff8835366.ctex"]
+source_file="res://Assets/triangle_small.png"
+dest_files=["res://.godot/imported/triangle_small.png-ff027b735ef82732e8f3849d0a7a2024.ctex"]
 
 [params]
 

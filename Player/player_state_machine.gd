@@ -25,7 +25,7 @@ var isDefaultState = false
 #@onready var Player: PlayerCharacter = $".."
 
 @onready var grappling: Node = $Grappling
-@onready var shared: Node = $"../Shared"
+#@onready var shared: Node = $"../Shared"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

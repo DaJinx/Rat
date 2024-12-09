@@ -21,7 +21,7 @@ Math="*res://GlobalScripts/math.gd"
 GlobalReferences="*res://GlobalScripts/GlobalReferences.gd"
 GameManager="*res://GlobalScripts/GameManager.gd"
 AudioManager="*res://GlobalScripts/AudioManager.gd"
-GlobalCamera="*res://Objects/GlobalCamera/GlobalCamera.gd"
+GlobalCamera="*res://Objects/GlobalCamera/GlobalCamera.tscn"
 DrawLine3d="*res://addons/Godot-3D-Lines-master/DrawLine3D.gd"
 
 [input]

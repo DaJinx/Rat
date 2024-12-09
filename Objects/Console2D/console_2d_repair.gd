@@ -47,25 +47,25 @@ const distToScrewOn:float = 2
 @onready var screw_1: MeshInstance3D = %Gameboy/Screw_1
 @onready var screw_1_in: Marker3D = %Gameboy/Screw_1_In
 @onready var screw_1_out: Marker3D = %Gameboy/Screw_1_Out
-@onready var camera_3d_screw_1: Camera3D = $Camera3D_Screw_2
+#@onready var camera_3d_screw_1: Camera3D = $Camera3D_Screw_2
 
 ## Screw 2
 @onready var screw_2: MeshInstance3D = %Gameboy/Screw_2
 @onready var screw_2_in: Marker3D = %Gameboy/Screw_2_In
 @onready var screw_2_out: Marker3D = %Gameboy/Screw_2_Out
-@onready var camera_3d_screw_2: Camera3D = $Camera3D_Screw_2
+#@onready var camera_3d_screw_2: Camera3D = $Camera3D_Screw_2
 
 ## Screw 3
 @onready var screw_3: MeshInstance3D = %Gameboy/Screw_3
 @onready var screw_3_in: Marker3D = %Gameboy/Screw_3_In
 @onready var screw_3_out: Marker3D = %Gameboy/Screw_3_Out
-@onready var camera_3d_screw_3: Camera3D = $Camera3D_Screw_3
+#@onready var camera_3d_screw_3: Camera3D = $Camera3D_Screw_3
 
 ## Screw 4
 @onready var screw_4: MeshInstance3D = %Gameboy/Screw_4
 @onready var screw_4_in: Marker3D = %Gameboy/Screw_4_In
 @onready var screw_4_out: Marker3D = %Gameboy/Screw_4_Out
-@onready var camera_3d_screw_4: Camera3D = $Camera3D_Screw_4
+#@onready var camera_3d_screw_4: Camera3D = $Camera3D_Screw_4
 
 var finished:bool = false
 #endregion

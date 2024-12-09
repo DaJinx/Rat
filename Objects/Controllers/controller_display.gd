@@ -10,6 +10,10 @@ var currentCon
 var desiredCon
 var firstTime = true
 
+# If enabled in the settings, player wants to have a specific controller
+# (or maybe has a third party controller without the official name in it)
+var customController = false 
+
 
 func _ready() -> void:
 	Input.connect("joy_connection_changed", _on_joy_connection_changed)
@@ -51,7 +55,8 @@ func _on_joy_connection_changed(device_id, connected):
 		return
 	
 	
-	elif controller == "Xbox One Controller":
+	# Xbox One Controller
+	elif controller == "XInput Gamepad":
 		return
 		# Untested
 	
@@ -99,11 +104,14 @@ func _on_joy_connection_changed(device_id, connected):
 		print("Controller:  Third Party SWITCH Controller")
 		return
 	
-	
-	elif controller == "Steam Deck Console":
+	# Steam Deck
+	elif controller == "Steam Virtual Gamepad":
 		return
 	
 	elif controller == "Steam Controller":
+		return
+	
+	elif controller == "Steam Controller 2":
 		return
 	
 	elif controller.contains("Steam"):

@@ -65,7 +65,6 @@ func _process(delta):
 
 
 func _physics_process(delta: float) -> void:
-	
 	if fadingOut:
 		return
 	

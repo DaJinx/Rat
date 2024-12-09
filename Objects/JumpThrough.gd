@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var collision = $StaticBody3D/CollisionShape3D
-@onready var mesh = $Mesh
+#@onready var collision = $StaticBody3D/CollisionShape3D
+#@onready var mesh = $Mesh
 var isBelow = false
 var isAbove = false
 var modelDefaultScale

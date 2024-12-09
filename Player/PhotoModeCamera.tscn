@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/PhotoModeCamera.gd" id="1_32tvf"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="2_72lux"]
-[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://assets/Textures/coin.png" id="3_1mcwq"]
+[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://Assets/Textures/coin.png" id="3_1mcwq"]
 
 [sub_resource type="SystemFont" id="SystemFont_1ixsq"]
 font_names = PackedStringArray("Star Choco")

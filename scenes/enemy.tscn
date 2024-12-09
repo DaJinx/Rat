@@ -1,9 +1,9 @@
 [gd_scene load_steps=35 format=4 uid="uid://cp5kjdcc67ygf"]
 
-[ext_resource type="Texture2D" uid="uid://bt5o0sr6peltq" path="res://Characters/gobot/model/gobot_gobot_diffuse.png" id="2_6d3h7"]
-[ext_resource type="Texture2D" uid="uid://cgkj45d67dalm" path="res://Characters/gobot/model/gobot_gobot_roughness.png" id="3_ndkqe"]
-[ext_resource type="Texture2D" uid="uid://d28w5bql3g21l" path="res://Characters/gobot/model/gobot_gobot_normal.png" id="4_y1r2b"]
-[ext_resource type="Material" uid="uid://div0enqs04w5j" path="res://Characters/gobot/materials/eye_mat.tres" id="5_kf8op"]
+[ext_resource type="Texture2D" uid="uid://bt5o0sr6peltq" path="res://Assets/Models/gobot/model/gobot_gobot_diffuse.png" id="2_6d3h7"]
+[ext_resource type="Texture2D" uid="uid://cgkj45d67dalm" path="res://Assets/Models/gobot/model/gobot_gobot_roughness.png" id="3_ndkqe"]
+[ext_resource type="Texture2D" uid="uid://d28w5bql3g21l" path="res://Assets/Models/gobot/model/gobot_gobot_normal.png" id="4_y1r2b"]
+[ext_resource type="Material" uid="uid://div0enqs04w5j" path="res://Assets/Models/gobot/materials/eye_mat.tres" id="5_kf8op"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://Assets/Resources/cloud.res" id="8_hd2n1"]
 [ext_resource type="Texture2D" uid="uid://clhres80vdm85" path="res://Assets/Textures/colormap.png" id="9_y6mo4"]
 [ext_resource type="AudioStream" uid="uid://lnq3qyt6mylm" path="res://Assets/Audio/SFX/jump.ogg" id="10_rygjd"]

@@ -19,9 +19,6 @@ func _ready() -> void:
 	rotationTarget = root.rotation_degrees
 
 func Tick(delta):
-	
-	
-	
 	Movement(delta)
 	Rotation(delta)
 

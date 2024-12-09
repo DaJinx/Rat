@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wpnh4mtsljov"
-path="res://.godot/imported/off_camera_notice_triangle.png-0cc80253effa50e53a39bef5a07d73db.ctex"
+path="res://.godot/imported/off_camera_notice_triangle.png-f49b01e589807cbfb05f250990c81de2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/off_camera_notice_triangle.png"
-dest_files=["res://.godot/imported/off_camera_notice_triangle.png-0cc80253effa50e53a39bef5a07d73db.ctex"]
+source_file="res://Assets/off_camera_notice_triangle.png"
+dest_files=["res://.godot/imported/off_camera_notice_triangle.png-f49b01e589807cbfb05f250990c81de2.ctex"]
 
 [params]
 
